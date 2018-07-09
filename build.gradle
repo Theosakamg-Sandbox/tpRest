@@ -58,8 +58,7 @@ dependencies {
 
 
     // Simplify getter/setter definitions:
-//    compile("${lib.modelmapper}")
-
+    compile("${lib.modelmapper}")
     compileOnly("${lib.lombok}")
 
     // Test

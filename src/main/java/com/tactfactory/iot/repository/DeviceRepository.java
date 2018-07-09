@@ -6,4 +6,6 @@ import com.tactfactory.iot.entity.Device;
 
 public interface DeviceRepository extends JpaRepository<Device, Long> {
 
+    Device findByUuid(String uuid);
+
 }
