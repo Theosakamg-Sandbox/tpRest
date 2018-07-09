@@ -1,5 +1,7 @@
 package com.tactfactory.iot.contoller;
 
+import java.util.List;
+
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -14,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.tactfactory.iot.dto.DtoDevice;
 import com.tactfactory.iot.entity.Device;
+import com.tactfactory.iot.entity.ThermalValue;
 import com.tactfactory.iot.service.DeviceService;
 
 import io.swagger.annotations.ApiOperation;
@@ -35,6 +38,12 @@ public class DeviceController {
         this.service.save(dev);
 
         return "Hello W!";
+    }
+
+    @GetMapping(path = "/{uuid}/data")
+    public ResponseEntity<List<ThermalValue>> getData(@PathVariable String uuid) {
+        final List<ThermalValue> entities = this.service.getData(uuid);
+        return new ResponseEntity<List<ThermalValue>>(entities, HttpStatus.OK);
     }
 
     //@RequestMapping(path = "/", method = RequestMethod.POST)

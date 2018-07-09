@@ -34,6 +34,9 @@ dependencies {
 //    compile("${lib.springBoot.starter.mail}")
 //    compile("${lib.springBoot.starter.amqp}")
 
+    // DATA bus
+    compile 'org.influxdb:influxdb-java:2.10'
+
     //  for dev
     runtime("${lib.springBoot.devtools}")
 
