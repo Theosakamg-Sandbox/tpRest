@@ -15,6 +15,7 @@ import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 
 import lombok.Data;
+import lombok.NonNull;
 
 @Data
 @Entity
@@ -25,7 +26,8 @@ public class Device {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column
+    @Column(nullable = false)
+    @NonNull
     private String uuid;
 
     @Column(name = "hard_version")
