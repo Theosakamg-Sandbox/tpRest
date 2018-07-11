@@ -32,7 +32,7 @@ dependencies {
     compile("${lib.springBoot.starter.dataRest}")
     compile("${lib.springBoot.starter.dataJpa}")
 //    compile("${lib.springBoot.starter.mail}")
-//    compile("${lib.springBoot.starter.amqp}")
+    compile("${lib.springBoot.starter.amqp}")
 
     // DATA bus
     compile 'org.influxdb:influxdb-java:2.10'

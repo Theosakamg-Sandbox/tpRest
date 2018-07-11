@@ -9,9 +9,14 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class InfluxConfig {
 
+    public static final String DB_NAME = "tp_rest";
+
     @Bean
     public InfluxDB makeInflux() {
-        return InfluxDBFactory.connect("http://localhost:8086");
+        final InfluxDB influx = InfluxDBFactory.connect("http://localhost:8086");
+        influx.setDatabase(DB_NAME);
+
+        return influx;
     }
 
     @Bean
