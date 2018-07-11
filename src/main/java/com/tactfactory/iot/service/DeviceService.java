@@ -57,7 +57,7 @@ public class DeviceService {
     }
 
     public List<ThermalValue> getData(String uuid) {
-        QueryResult queryResult = this.influx.query(
+        final QueryResult queryResult = this.influx.query(
                 new Query("SELECT * FROM thermal WHERE salle='" + uuid + "'", "tp_rest"));
 
         return this.resultMapper.toPOJO(queryResult, ThermalValue.class);

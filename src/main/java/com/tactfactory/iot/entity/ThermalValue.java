@@ -17,7 +17,7 @@ public class ThermalValue {
     private Instant time;
 
     @Column(name = "salle", tag = true)
-    private String room;
+    private String uuid;
 
     @Column(name = "value")
     private Double value;

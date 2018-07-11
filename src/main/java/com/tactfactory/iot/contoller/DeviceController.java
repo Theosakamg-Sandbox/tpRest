@@ -29,9 +29,10 @@ public class DeviceController {
     private DeviceService service;
 
     @GetMapping(path ="/test")
+    @ApiOperation(value = "Not use ! Just for test...")
     public String hello() {
         Device dev = new Device()
-            .setUuid("totot")
+            .setUuid("A8")
             .setHwVer(2)
             .setSwVer(1);
 
@@ -41,6 +42,7 @@ public class DeviceController {
     }
 
     @GetMapping(path = "/{uuid}/data")
+    @ApiOperation(value = "Get history data of specific device.")
     public ResponseEntity<List<ThermalValue>> getData(@PathVariable String uuid) {
         final List<ThermalValue> entities = this.service.getData(uuid);
         return new ResponseEntity<List<ThermalValue>>(entities, HttpStatus.OK);
