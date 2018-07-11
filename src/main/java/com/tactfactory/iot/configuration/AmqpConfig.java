@@ -21,10 +21,10 @@ import org.springframework.context.annotation.Configuration;
 public class AmqpConfig {
 
     /** Default Topic path. */
-    public static final String TOPIC_SENSOR = "/sensor";
+    public static final String TOPIC_SENSOR = "amq.topic";
 
     /** Default Queue path. */
-    public static final String QUEUE_SENSOR = "/sensorQueue";
+    public static final String QUEUE_SENSOR = "sensorQueue";
 
     /** Default Routing-key to use. */
     public static final String ROUTING_KEY  = "sensor.*";

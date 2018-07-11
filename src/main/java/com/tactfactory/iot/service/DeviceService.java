@@ -69,7 +69,7 @@ public class DeviceService {
 
     public void insert(ThermalMessage value) {
         Point point = Point.measurement("thermal")
-                .time(System.currentTimeMillis(), TimeUnit.MILLISECONDS)
+                .time(System.nanoTime(), TimeUnit.NANOSECONDS)
                 .tag("salle", value.getUuid())
                 .addField("value", value.getTemp())
                 .addField("hydro", value.getHydro())
