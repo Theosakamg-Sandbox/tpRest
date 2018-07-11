@@ -48,7 +48,7 @@ public class DeviceService {
     public boolean register(Device dev) {
         boolean result = false;
         // check if device already exist.
-        if (this.repo.findByUuid(dev.getUuid()) == null) {
+        if (this.repo.findOneByUuid(dev.getUuid()) == null) {
             dev.setInventoryAt(ZonedDateTime.now());
 
             // Insert into system

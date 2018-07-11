@@ -4,8 +4,16 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.tactfactory.iot.entity.Device;
 
+/**
+ * JPA Repository.
+ */
 public interface DeviceRepository extends JpaRepository<Device, Long> {
 
-    Device findByUuid(String uuid);
+    /**
+    * Find Device with UUID.
+    * @param uuid Id of Device.
+    * @return Device instance.
+    */
+    Device findOneByUuid(String uuid);
 
 }

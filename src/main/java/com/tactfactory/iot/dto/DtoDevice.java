@@ -2,6 +2,9 @@ package com.tactfactory.iot.dto;
 
 import lombok.Data;
 
+/**
+ * Device DTO, link to Device class.
+ */
 @Data
 public class DtoDevice {
 

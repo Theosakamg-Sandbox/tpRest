@@ -16,11 +16,11 @@ public class ThermalValue {
     @Column(name = "time")
     private Instant time;
 
-    @Column(name = "salle", tag = true)
+    @Column(name = "uuid", tag = true)
     private String uuid;
 
     @Column(name = "value")
-    private Double value;
+    private Double temp;
 
     @Column(name = "hydro")
     private Double hydro;
